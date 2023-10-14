@@ -1,0 +1,46 @@
+<html>
+
+<script id="vertex-shader" type="x-shader/x-vertex">
+
+attribute  vec4 vPosition;
+
+uniform mat4 projection;
+uniform mat4 modelview;
+
+void main() 
+{
+    gl_Position = projection * modelview * vPosition;
+} 
+</script>
+
+<script id="fragment-shader" type="x-shader/x-fragment">
+
+precision mediump float;
+   
+uniform vec4 fColor;
+
+void
+main()
+{
+    gl_FragColor = fColor;
+}
+</script>
+
+<script type="text/javascript" src="../Common/webgl-utils.js"></script>
+<script type="text/javascript" src="../Common/initShaders.js"></script>
+<script type="text/javascript" src="../Common/MV.js"></script>
+<script type="text/javascript" src="fish.js"></script>
+
+<body>
+    <div> Cohesion steps  0 <input id="cohesionSlider" type="range" min="0" max="10" step="1" value="0" /> 10</div>
+    <div> Alignment steps  0 <input id="alignMentSlider" type="range" min="0" max="10" step="1" value="0" /> 10</div>
+    <div> Seperation steps  0 <input id="seperationSlider" type="range" min="0" max="10" step="1" value="0" /> 10</div>
+<canvas id="gl-canvas" width="500" height="500">
+Oops ... your browser doesn't support the HTML5 canvas element
+</canvas>
+   
+<br/>
+
+</body>
+</html>
+<body>
